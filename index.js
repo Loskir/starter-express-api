@@ -14,4 +14,5 @@ bot.command('test', async (ctx) => {
 const app = express()
 app.use(express.json())
 app.post('/'+process.env.TOKEN, webhookCallback(bot, 'express'))
+app.post('/ping', (req, res) => res.end('pong'))
 app.listen(process.env.PORT || 3000)
